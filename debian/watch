@@ -1,0 +1,3 @@
+version=3
+opts="uversionmangle=s/^v//" \
+https://github.com/vmware/pyvmomi/tags .*/(\d[\d\.]+)\.tar\.gz
