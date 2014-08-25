@@ -1,3 +1,2 @@
 version=3
-opts="uversionmangle=s/^v//" \
-https://github.com/vmware/pyvmomi/tags .*/(\d[\d\.]+)\.tar\.gz
+https://pypi.python.org/packages/source/p/pyvmomi/pyvmomi-(.*)\.tar\.gz

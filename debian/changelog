@@ -1,3 +1,14 @@
+python-pyvmomi (5.5.0-2014.1-1) unstable; urgency=low
+
+  * New upstream version.
+  * Add RST documentation in python-pyvmomi-doc.
+  * Add Python3 support in python3-pyvmomi.
+  * Add upstream maintainer information.
+  * Add new watch file using PyPI.
+  * Use pybuild, which automates the testing and install phases.
+
+ -- Joshua Kwan <joshk@triplehelix.org>  Mon, 25 Aug 2014 12:59:53 -0400
+
 python-pyvmomi (5.5.0-1) unstable; urgency=low
 
   * Initial release. (Closes: #738325)

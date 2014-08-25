@@ -4,8 +4,18 @@ Priority: optional
 Maintainer: PKG OpenStack <openstack-devel@lists.alioth.debian.org>
 Uploaders: Julien Danjou <acid@debian.org>,
            Thomas Goirand <zigo@debian.org>,
-           Mehdi Abaakouk <sileht@sileht.net>
-Build-Depends: debhelper (>= 9), python-setuptools, python-all (>= 2.6.6-3~)
+           Mehdi Abaakouk <sileht@sileht.net>,
+           Joshua Kwan <joshk@triplehelix.org>
+Build-Depends:
+ debhelper (>= 9),
+ python-all (>= 2.6.6-3),
+ python-requests,
+ python-setuptools,
+ python-six,
+ python3-all,
+ python3-requests,
+ python3-setuptools,
+ python3-six
 Standards-Version: 3.9.5
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=openstack/python-pyvmomi.git
 Vcs-Git: git://anonscm.debian.org/openstack/python-pyvmomi.git
@@ -14,9 +24,39 @@ Homepage: https://github.com/vmware/pyvmomi
 Package: python-pyvmomi
 Architecture: all
 Pre-Depends: dpkg (>= 1.15.6~)
-Depends: ${python:Depends}, ${misc:Depends}
-Description: VMware vSphere Python SDK - Python 2.x
- pyVmomi is a Python SDK for the VMware vSphere API that allows you to
- manipulate ESX, ESXi, and vCenter using scripts.
+Depends:
+ ${misc:Depends},
+ ${python:Depends},
+ python-requests
+Suggests: pyvmomi-doc
+Description: Python bindings for the VMware vSphere Web Services SDK
+ pyVmomi is the Python SDK for the VMware vSphere API that allows you to
+ automate actions on VMware ESX, ESXi, and vCenter servers.
  .
  This package contains the Python 2.x module.
+
+Package: python3-pyvmomi
+Architecture: all
+Pre-Depends: dpkg (>= 1.15.6~)
+Depends:
+ ${misc:Depends},
+ ${python3:Depends},
+ python3-requests
+Suggests: pyvmomi-doc
+Description: Python bindings for the VMware vSphere Web Services SDK
+ pyVmomi is the Python SDK for the VMware vSphere API that allows you to
+ automate actions on VMware ESX, ESXi, and vCenter servers.
+ .
+ This package contains the Python 3.x module.
+
+Package: python-pyvmomi-doc
+Architecture: all
+Section: doc
+Pre-Depends: dpkg (>= 1.15.6~)
+Depends:
+ ${misc:Depends}
+Description: Python bindings for the VMware vSphere Web Services SDK (documentation)
+ pyVmomi is the Python SDK for the VMware vSphere API that allows you to
+ automate actions on VMware ESX, ESXi, and vCenter servers.
+ .
+ This package contains the reStructuredText documentation for the bindings.

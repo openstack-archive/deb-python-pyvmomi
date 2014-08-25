@@ -1,5 +1,6 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: pyvmomi
+Upstream-Contact: Shawn Hartsock <hartsock@acm.org>
 Source: https://github.com/vmware/pyvmomi
 
 Files: debian/*
@@ -7,7 +8,7 @@ Copyright: (c) 2013, Thomas Goirand <zigo@debian.org>
 License: Apache-2
 
 Files: *
-Copyright: (c) 2013, VMware, Inc.
+Copyright: (c) 2008-2014, VMware, Inc.
 License: Apache-2
 
 License: Apache-2
