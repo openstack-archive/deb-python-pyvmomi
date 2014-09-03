@@ -1,0 +1,45 @@
+commit f4c046fc51852bf894cdf4456201a0645c171177
+Author: Michael Rice <michael.rice@rackspace.com>
+Date:   Sun Aug 31 18:39:15 2014 -0500
+
+    removed the data_files
+    
+    This was causing the setup.py to try to install the files listed
+    For example:
+    
+    running install_data
+    copying LICENSE.txt -> /builddir/build/BUILDROOT/python-pyvmomi-5.5.0.2014.1.1-1.fc20.x86_64/usr/
+    copying NOTICE.txt -> /builddir/build/BUILDROOT/python-pyvmomi-5.5.0.2014.1.1-1.fc20.x86_64/usr/
+    copying MANIFEST.in -> /builddir/build/BUILDROOT/python-pyvmomi-5.5.0.2014.1.1-1.fc20.x86_64/usr/
+    copying setup.py -> /builddir/build/BUILDROOT/python-pyvmomi-5.5.0.2014.1.1-1.fc20.x86_64/usr/
+    copying tox.ini -> /builddir/build/BUILDROOT/python-pyvmomi-5.5.0.2014.1.1-1.fc20.x86_64/usr/
+    copying setup.cfg -> /builddir/build/BUILDROOT/python-pyvmomi-5.5.0.2014.1.1-1.fc20.x86_64/usr/
+    
+    Those files should not go in that location.
+    The MANIFEST.in file does enough by adding those files to the sdist
+    from there if you intend to have those files installed by setup.py
+    you should tell it where to put them. This change allows packagers
+    to specify where those files end up in their packaging process.
+
+--- a/setup.py
++++ b/setup.py
+@@ -38,8 +38,6 @@
+    packages=['pyVmomi', 'pyVim'],
+    install_requires=required,
+    license='License :: OSI Approved :: Apache Software License',
+-   data_files = [('', ['LICENSE.txt', 'NOTICE.txt', 'MANIFEST.in',
+-                       'setup.py', 'tox.ini', 'setup.cfg'])],
+    classifiers=[
+       'Development Status :: 5 - Production/Stable',
+       'License :: OSI Approved :: Apache Software License',
+@@ -60,8 +58,8 @@
+       'Operating System :: MacOS',
+    ],
+    keywords='pyvmomi vsphere vmware esx',
++   platforms=['Windows', 'Linux', 'Solaris', 'Mac OS-X', 'Unix'],
+-   platforms = ['Windows', 'Linux', 'Solaris', 'Mac OS-X', 'Unix'],
+    test_suite='tests',
++   tests_require=required_for_tests,
+-   tests_require= required_for_tests,
+    zip_safe=True
+ )

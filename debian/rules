@@ -1,13 +1,20 @@
 #!/usr/bin/make -f
 
+UPSTREAM_GIT = git://github.com/vmware/pyvmomi.git
+-include /usr/share/openstack-pkg-tools/pkgos.make
+
 PYVMOMI_DOC_PKG := python-pyvmomi-doc
 
 export PYBUILD_DESTDIR_python2=debian/python-pyvmomi/
 export PYBUILD_DESTDIR_python3=debian/python3-pyvmomi/
+
+# TODO: package python-vcrpy then enable the tests
+export PYBUILD_DISABLE_python2=test
+export PYBUILD_DISABLE_python3=test
 
 %:
 	dh $@ --with python2,python3 --buildsystem=pybuild
 
 override_dh_installdocs:
 	dh_installdocs -X.rst
-	rsync -a docs/ debian/$(PYVMOMI_DOC_PKG)/usr/share/doc/$(PYVMOMI_DOC_PKG)
+	cp -a docs/* debian/$(PYVMOMI_DOC_PKG)/usr/share/doc/$(PYVMOMI_DOC_PKG)

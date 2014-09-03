@@ -29,7 +29,7 @@ Depends:
  ${python:Depends},
  python-requests
 Suggests: pyvmomi-doc
-Description: Python bindings for the VMware vSphere Web Services SDK
+Description: VMware vSphere Python SDK - Python 2.x
  pyVmomi is the Python SDK for the VMware vSphere API that allows you to
  automate actions on VMware ESX, ESXi, and vCenter servers.
  .
@@ -43,7 +43,7 @@ Depends:
  ${python3:Depends},
  python3-requests
 Suggests: pyvmomi-doc
-Description: Python bindings for the VMware vSphere Web Services SDK
+Description: VMware vSphere Python SDK - Python 3.x
  pyVmomi is the Python SDK for the VMware vSphere API that allows you to
  automate actions on VMware ESX, ESXi, and vCenter servers.
  .
@@ -55,7 +55,7 @@ Section: doc
 Pre-Depends: dpkg (>= 1.15.6~)
 Depends:
  ${misc:Depends}
-Description: Python bindings for the VMware vSphere Web Services SDK (documentation)
+Description: VMware vSphere Python SDK - documentation
  pyVmomi is the Python SDK for the VMware vSphere API that allows you to
  automate actions on VMware ESX, ESXi, and vCenter servers.
  .
