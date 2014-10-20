@@ -2,6 +2,7 @@ python-pyvmomi (5.5.0-2014.1.1-2) unstable; urgency=medium
 
   * Added missing dh-python build-depends.
   * Ran wrap-and-sort.
+  * Standards-Version is now 3.9.6 (no change).
 
  -- Thomas Goirand <zigo@debian.org>  Mon, 20 Oct 2014 23:23:52 +0800
 
