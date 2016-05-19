@@ -1,6 +1,7 @@
 python-pyvmomi (5.5.0-2014.1.1-4) UNRELEASED; urgency=medium
 
   * Fixed VCS URLs (https).
+  * d/rules: Changed UPSTREAM_GIT protocol to https
 
  -- Ondřej Nový <novy@ondrej.org>  Sun, 28 Feb 2016 15:48:02 +0100
 
