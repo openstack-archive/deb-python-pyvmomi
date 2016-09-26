@@ -17,8 +17,8 @@ Build-Depends: debhelper (>= 9),
                python3-setuptools,
                python3-six
 Standards-Version: 3.9.6
-Vcs-Browser: https://anonscm.debian.org/cgit/openstack/python-pyvmomi.git/
-Vcs-Git: https://anonscm.debian.org/git/openstack/python-pyvmomi.git
+Vcs-Browser: https://git.openstack.org/cgit/openstack/deb-python-pyvmomi?h=debian%2Fnewton
+Vcs-Git: https://git.openstack.org/openstack/deb-python-pyvmomi -b debian/newton
 Homepage: https://github.com/vmware/pyvmomi
 
 Package: python-pyvmomi
